@@ -3,7 +3,6 @@ package Template::Plugin::Macboogi;
 use strict;
 use utf8;
 use Const::Fast;
-use Encode qw/decode_utf8 encode_utf8/;
 use Lingua::KO::Hangul::Util qw(:all);
 use vars qw($VERSION);
 $VERSION = 0.01;
@@ -31,7 +30,6 @@ sub new {
 }
 
 sub macboogify {
-    #my $input = decode_utf8(uc shift);
     my $input = uc shift;
     my @chars = split //, $input;
     my @mac_chars;
@@ -63,7 +61,6 @@ sub macboogify {
 
     my $chars = join '', @mac_chars;
     $chars =~ s/^use /use /i;
-    #return encode_utf8($chars);
     return $chars;
 }
 
