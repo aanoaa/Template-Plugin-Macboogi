@@ -24,7 +24,6 @@ const my $INTERVAL          => $SELLABLE_BEGIN - $JONGSUNG_BEGIN;
 sub new {
     my($self, $context, @args) = @_;
     my $name = $args[0] || $FILTER_NAME;
-    $context->define_filter($name, \&commify, 0);
     $context->define_filter($name, \&macboogify, 0);
     return $self;
 }
